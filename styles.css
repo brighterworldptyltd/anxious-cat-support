@@ -72,6 +72,35 @@ li {
   font-size: 1.12rem;
 }
 
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin: 1.75rem 0 0;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  color: var(--cream-soft);
+  background: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: var(--coral);
+  color: #fff;
+}
+
+.cta-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .panel {
   margin: 1.75rem 0;
   padding: 1.25rem;

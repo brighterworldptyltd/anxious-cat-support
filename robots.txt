@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /anxious-cat-support/go/
+
+Sitemap: https://brighterworldptyltd.github.io/anxious-cat-support/sitemap.xml
