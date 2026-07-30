@@ -163,8 +163,7 @@ li {
   outline: 3px solid rgba(200, 121, 112, 0.2);
 }
 
-.support-privacy,
-.support-fallback {
+.support-privacy {
   color: var(--muted);
   font-size: 0.94rem;
 }
