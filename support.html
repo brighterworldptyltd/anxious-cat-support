@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Support for Anxious Cat, a private app that helps you manage your anxiety.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://anxious-cat-support-api-883555919592.us-central1.run.app; img-src 'self'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
   <title>Support - Anxious Cat</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,16 +16,116 @@
     </header>
 
     <p class="lede">
-      If something is not working, tell us what happened and which iPhone
-      and iOS version you use.
+      Tell us what went wrong, ask a question, or suggest an improvement.
+      Do not include anxiety journal details, photos, or voice notes.
     </p>
 
-    <div class="panel">
-      <p>
-        Email
-        <a href="mailto:chirpycharm1@gmail.com">chirpycharm1@gmail.com</a>
+    <form class="support-form panel" id="contact" novalidate>
+      <div class="support-grid">
+        <label class="support-field support-field-wide">
+          <span>What do you need help with?</span>
+          <select name="category" required>
+            <option value="">Choose one</option>
+            <option value="problem">Something is not working</option>
+            <option value="question">I have a question</option>
+            <option value="idea">I have an idea</option>
+            <option value="privacy">Privacy question</option>
+            <option value="other">Something else</option>
+          </select>
+        </label>
+
+        <label class="support-field">
+          <span>Reply email <small>(optional)</small></span>
+          <input
+            name="reply_email"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            maxlength="254"
+            placeholder="you@example.com"
+          >
+        </label>
+
+        <label class="support-field">
+          <span>iPhone model <small>(optional)</small></span>
+          <input
+            name="device"
+            type="text"
+            maxlength="120"
+            placeholder="iPhone 17 Pro"
+          >
+        </label>
+
+        <label class="support-field support-field-wide">
+          <span>What were you trying to do?</span>
+          <textarea
+            name="trying"
+            rows="3"
+            maxlength="600"
+            required
+          ></textarea>
+        </label>
+
+        <label class="support-field support-field-wide">
+          <span>What happened instead?</span>
+          <textarea
+            name="happened"
+            rows="4"
+            maxlength="1000"
+            required
+          ></textarea>
+        </label>
+
+        <label class="support-field support-field-wide">
+          <span>What would make this easier? <small>(optional)</small></span>
+          <textarea
+            name="easier"
+            rows="3"
+            maxlength="600"
+          ></textarea>
+        </label>
+
+        <label class="support-field">
+          <span>iOS version <small>(optional)</small></span>
+          <input
+            name="ios_version"
+            type="text"
+            maxlength="80"
+            placeholder="iOS 26.5"
+          >
+        </label>
+      </div>
+
+      <label class="support-trap" aria-hidden="true">
+        <span>Website</span>
+        <input
+          name="website"
+          type="text"
+          tabindex="-1"
+          autocomplete="off"
+        >
+      </label>
+
+      <p class="support-privacy">
+        Only the fields you submit are sent. The app does not attach your
+        cats, entries, check-ins, photos, or voice notes.
       </p>
-    </div>
+
+      <button class="support-submit" type="submit">send to support</button>
+      <p class="support-status" id="support-status" aria-live="polite"></p>
+    </form>
+
+    <noscript>
+      <p class="panel">
+        JavaScript is required for the support form. Use the fallback email
+        below if JavaScript is unavailable.
+      </p>
+    </noscript>
+
+    <p class="support-fallback">
+      If the form is unavailable, email
+      <a href="mailto:chirpycharm1@gmail.com">chirpycharm1@gmail.com</a>.
+    </p>
 
     <p class="cta-row">
       <a class="cta" href="/anxious-cat-support/go/site-support/">Download on the App Store</a>
@@ -62,5 +163,6 @@
 
     <footer><a href="index.html">Back to Anxious Cat</a></footer>
   </main>
+  <script src="support.js" defer></script>
 </body>
 </html>
